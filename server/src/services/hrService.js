@@ -512,8 +512,11 @@ export const hrService = {
     if (!email && !phone) throw new Error('Provide an email address or phone number.');
     if (email && await db.findOne('users', { email })) throw new Error('Email already registered.');
     if (phone && (await db.findOne('users', { phone }) || await db.findOne('employees', { phone }))) throw new Error('Phone number already registered.');
+    if (staffData.staff_id && await db.findOne('employees', { company_id: companyId, staff_id: String(staffData.staff_id) })) throw new Error('Staff ID already registered.');
     const rank_code = staffData.rank_code || 'STAFF';
-    const department = staffData.department || 'Operations';
+    const selectedDepartment = staffData.department_id ? await db.findById('departments', Number(staffData.department_id)) : null;
+    if (staffData.department_id && (!selectedDepartment || Number(selectedDepartment.company_id) !== companyId)) throw new Error('Choose a department from your company.');
+    const department = staffData.department || selectedDepartment?.name || 'Operations';
     const numbering_department_code=departmentCode(department,staffData.numbering_department_code);
     const hire_date=staffData.date_of_joining||staffData.hire_date||getLagosTime().dateStr;
     hiringYear({hire_date});
@@ -533,6 +536,9 @@ export const hrService = {
         authUserId = result.authUserId;
       }
       return await db.transaction(async () => {
+        if (email && await db.findOne('users', { email })) throw new Error('Email already registered.');
+        if (phone && (await db.findOne('users', { phone }) || await db.findOne('employees', { phone }))) throw new Error('Phone number already registered.');
+        if (staffData.staff_id && await db.findOne('employees', { company_id: companyId, staff_id: String(staffData.staff_id) })) throw new Error('Staff ID already registered.');
         createdUser = await db.insert('users', {
           company_id: companyId, auth_user_id: authUserId, full_name: first_name + ' ' + last_name,
           email, phone, password_hash: bcrypt.hashSync(password, 10), role_code,
