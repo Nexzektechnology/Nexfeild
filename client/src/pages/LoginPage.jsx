@@ -175,10 +175,10 @@ export default function LoginPage({ onLogin, onNavigatePublic }) {
           <img src="/favicon.svg" alt="Logo" className="w-9 h-9" />
           <div>
             <div className="text-sm font-black tracking-tight text-white flex items-center gap-1.5">
-              EDGE<span className="text-orange-500">W</span>FORCE
+              NEX<span className="text-orange-500">FIELD</span>FORCE
             </div>
             <div className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
-              Powered by NexFieldForce
+              Workforce intelligence platform
             </div>
           </div>
         </div>
