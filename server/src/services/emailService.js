@@ -173,9 +173,9 @@ export const emailService = {
    */
   async sendIdleAlertEmail(recipientEmail, session, employeeName, department = 'Operations') {
     const fromAddress = process.env.EMAIL_FROM || process.env.SMTP_USER || 'no-reply@edgewforce.com';
-    const subject = `⚠️ [WORKSTATION TELEMETRY] 10m Inactivity Alert: ${employeeName} (${department})`;
+    const subject = `⚠️ [WORKSTATION TELEMETRY] 60m Inactivity Alert: ${employeeName} (${department})`;
 
-    const textContent = `WORKSTATION INACTIVITY ALERT\n\nEmployee: ${employeeName}\nDepartment: ${department}\nIdle Duration: ${Math.round((session.duration_seconds || 600) / 60)} minutes\nDetected At: ${new Date(session.detected_at || Date.now()).toLocaleTimeString()}\nStatus: Awaiting employee explanation\n\n— EdgeWForce Workstation Telemetry`;
+    const textContent = `WORKSTATION INACTIVITY ALERT\n\nEmployee: ${employeeName}\nDepartment: ${department}\nIdle Duration: ${Math.round((session.duration_seconds || 3600) / 60)} minutes\nDetected At: ${new Date(session.detected_at || Date.now()).toLocaleTimeString()}\nStatus: Awaiting employee explanation\n\n— NexFieldForce Workstation Telemetry`;
 
     const htmlContent = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 540px; margin: 0 auto; padding: 20px; background: #ffffff; border-radius: 10px; border: 1px solid #e4e4e7;">

@@ -116,7 +116,7 @@ export const idleService = {
     const session = await db.findById('employee_idle_sessions', sessionId);
     if (!session || Number(session.company_id) !== Number(actor.company_id)) throw Object.assign(new Error('Activity event not found.'), { status: 404 });
     if (Number(session.employee_id) !== Number(actor.employee?.id || (await db.findOne('employees', { user_id: Number(actor.id), company_id: Number(actor.company_id) }))?.id)) throw Object.assign(new Error('You can only explain your own activity.'), { status: 403 });
-    if (!reason || String(reason).length > 100 || String(reason_details || '').length > 2000) throw new Error('Invalid activity explanation.');
+    if (!reason || !String(reason_details || '').trim() || String(reason).length > 100 || String(reason_details || '').length > 2000) throw new Error('Choose an activity category and provide a brief explanation.');
 
     const updated = await db.update('employee_idle_sessions', session.id, {
       reason: reason || 'Break',

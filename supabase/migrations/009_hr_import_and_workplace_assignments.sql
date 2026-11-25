@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS idle_alerts (
     employee_id INTEGER NOT NULL REFERENCES employees(id) ON DELETE CASCADE,
     started_at TIMESTAMPTZ NOT NULL,
     ended_at TIMESTAMPTZ,
-    duration_seconds INTEGER NOT NULL DEFAULT 600,
+    duration_seconds INTEGER NOT NULL DEFAULT 3600,
     reason TEXT,
     explanation TEXT,
     resolved BOOLEAN NOT NULL DEFAULT FALSE,

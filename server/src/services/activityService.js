@@ -85,7 +85,7 @@ export const activityService = {
     if (review ? !this.canReview(user) : Number(event.user_id) !== Number(user.id)) fail('You cannot update this activity event.', 403);
     if (review) return db.update('workforce_activity_events', event.id, { reviewed_at: iso(Date.now()), reviewed_by: actor.id });
     const reason = String(input.reason || '').trim(), details = String(input.reason_details || '').trim();
-    if (!reason || reason.length > 100 || details.length > 2000) fail('Choose an activity category and keep the explanation under 2,000 characters.');
+    if (!reason || reason.length > 100 || !details || details.length > 2000) fail('Choose an activity category and provide an explanation under 2,000 characters.');
     return db.update('workforce_activity_events', event.id, { reason, reason_details: details, explained_at: iso(Date.now()) });
   },
   async notices(actor) {

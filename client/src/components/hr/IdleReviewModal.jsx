@@ -9,7 +9,7 @@ export default function IdleReviewModal({ alert, isOpen, onClose }) {
   return (
     <Modal
       title="Inactivity Telemetry Review"
-      subtitle="10-Minute workstation idle monitoring report"
+            subtitle="60-Minute workstation idle monitoring report"
       isOpen={isOpen}
       onClose={onClose}
       maxWidth="max-w-md"

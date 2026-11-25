@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 
-export default function Modal({ title, subtitle, isOpen = true, onClose, children, maxWidth = 'max-w-2xl' }) {
+export default function Modal({ title, subtitle, isOpen = true, onClose, children, maxWidth = 'max-w-2xl', dismissible = true }) {
   const dialogRef = useRef(null);
   const onCloseRef = useRef(onClose);
   onCloseRef.current = onClose;
@@ -11,7 +11,7 @@ export default function Modal({ title, subtitle, isOpen = true, onClose, childre
     const focusable = () => [...(dialogRef.current?.querySelectorAll('button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), a[href]') || [])];
     focusable()[0]?.focus();
     const handleEsc = (e) => {
-      if (e.key === 'Escape') onCloseRef.current?.();
+      if (e.key === 'Escape' && dismissible) onCloseRef.current?.();
       if (e.key === 'Tab') {
         const elements = focusable(), first = elements[0], last = elements.at(-1);
         if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
@@ -20,7 +20,7 @@ export default function Modal({ title, subtitle, isOpen = true, onClose, childre
     };
     window.addEventListener('keydown', handleEsc);
     return () => { window.removeEventListener('keydown', handleEsc); previousFocus?.focus(); };
-  }, [isOpen]);
+  }, [isOpen, dismissible]);
 
   if (!isOpen) return null;
 
@@ -33,13 +33,13 @@ export default function Modal({ title, subtitle, isOpen = true, onClose, childre
             <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">{title}</h3>
             {subtitle && <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{subtitle}</p>}
           </div>
-          <button
+          {dismissible && <button
             aria-label="Close dialog"
             onClick={onClose}
             className="p-1.5 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
           >
             <X size={18} />
-          </button>
+          </button>}
         </div>
 
         {/* Content Body */}

@@ -150,6 +150,10 @@ export default function Shell({
   }, []);
 
   const handleSubmitIdleReason = async () => {
+    if (!idleReason || !idleExplanation.trim()) {
+      setIdleError('Choose an activity category and provide a brief explanation before continuing.');
+      return;
+    }
     setIdleSaving(true);
     setIdleError('');
     try { await activity.explain(idleReason, idleExplanation); setIdleExplanation(''); }
@@ -272,12 +276,13 @@ export default function Shell({
         onMarkAllRead={handleMarkAllNotificationsRead}
       />
 
-      {/* Inactivity Telemetry 10-Minute Idle Prompt Modal */}
+      {/* Inactivity Telemetry 60-Minute Idle Prompt Modal. Staff must explain before continuing. */}
       <Modal
         title="App activity check"
-        subtitle="A 60-minute gap has been flagged for HR review"
+        subtitle="A 60-minute gap has been flagged for HR review. An explanation is required."
         isOpen={idleModalOpen}
-        onClose={activity.dismiss}
+        onClose={() => {}}
+        dismissible={false}
         maxWidth="max-w-md"
       >
         <div className="space-y-4 text-xs">
@@ -312,11 +317,11 @@ export default function Shell({
 
           <div>
             <label className="block text-xs font-bold text-zinc-800 dark:text-zinc-200 mb-1">
-              Brief Explanation (Optional)
+              Brief Explanation *
             </label>
             <textarea
               rows="2"
-              placeholder="e.g. Discussing Q3 sales order with retail manager Alhaji Bello..."
+              placeholder="Explain what happened during this 60-minute gap..."
               className="form-input"
               maxLength={2000}
               value={idleExplanation}
@@ -328,7 +333,7 @@ export default function Shell({
           <button
             type="button"
             onClick={handleSubmitIdleReason}
-            disabled={idleSaving}
+            disabled={idleSaving || !idleReason || !idleExplanation.trim()}
             className="btn-primary w-full py-2.5"
           >
             {idleSaving ? 'Saving…' : 'Submit explanation'}

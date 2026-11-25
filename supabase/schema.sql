@@ -772,7 +772,7 @@ CREATE TABLE IF NOT EXISTS public.employee_idle_sessions (
     user_id UUID REFERENCES auth.users(id) ON DELETE SET NULL,
     idle_started_at TIMESTAMPTZ NOT NULL,
     detected_at TIMESTAMPTZ NOT NULL,
-    duration_seconds INTEGER NOT NULL DEFAULT 600,
+    duration_seconds INTEGER NOT NULL DEFAULT 3600,
     reason VARCHAR(100) DEFAULT 'Awaiting Explanation',
     reason_details TEXT,
     status VARCHAR(50) NOT NULL DEFAULT 'pending', -- pending, explained, unexplained
