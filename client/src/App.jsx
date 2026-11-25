@@ -207,7 +207,7 @@ export default function App() {
       <div className="min-h-screen flex items-center justify-center surface-bg">
         <div className="flex flex-col items-center gap-3">
           <div className="w-8 h-8 border-3 border-orange-500 border-t-transparent rounded-full animate-spin" />
-          <span className="text-xs font-semibold text-zinc-500">Initializing EdgeWForce Enterprise...</span>
+          <span className="text-xs font-semibold text-zinc-500">Initializing NexFieldForce...</span>
         </div>
       </div>
     );

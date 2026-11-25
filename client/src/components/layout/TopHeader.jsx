@@ -54,12 +54,12 @@ export default function TopHeader({
 
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-orange-600 to-amber-500 flex items-center justify-center text-white font-black text-sm shadow-xs">
-            E
+            N
           </div>
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-black uppercase tracking-wider text-zinc-900 dark:text-zinc-100 block">
-                EdgeWForce
+                NexFieldForce
               </span>
             </div>
             <span className="hidden sm:block text-[10px] text-zinc-400 -mt-0.5">

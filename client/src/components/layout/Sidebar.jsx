@@ -190,7 +190,7 @@ export default function Sidebar({ user, currentTab, onSelectTab, onLogout, isMob
           <span className="text-[9px] uppercase font-bold px-1.5 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 text-zinc-500">{role || 'STAFF'}</span>
         </div>
         <div className="text-[10px] text-zinc-400 dark:text-zinc-500 font-medium">
-          &copy; Nexfeild. edgewforce.com
+          &copy; NexFieldForce
         </div>
       </div>
     </aside>

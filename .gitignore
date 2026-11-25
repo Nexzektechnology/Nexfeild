@@ -42,3 +42,6 @@ dev-err.log
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
+.env*

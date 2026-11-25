@@ -5,9 +5,9 @@ This repository combines the NexFieldForce application with the current EdgeWFor
 ## Applications and deployment
 
 - `src/` and `server/` contain the NexFieldForce interface and its MySQL-backed API. Its public registration endpoint is `POST /api/auth/register` and is covered by `server/src/tests/nexfield_registration.test.js`.
-- `client/` and `server/src/` contain the EdgeWForce web interface and Supabase-backed API. `vercel.json` builds this version for Vercel. HR staff registration requires an authorized manager and an assigned workstation before staff can complete location-restricted sign-in.
-- `supabase/install_empty_database.sql` installs the EdgeWForce schema without importing operational records. Apply migrations after provisioning a **NexFieldForce-owned** Supabase project. Never run the historical seed scripts on a live project.
-- Configure production secrets in Vercel environment settings. Do not put them in Git. The Supabase project URL currently held in the local `.env` does not resolve, so it is not a verified production target.
+- `client/` and `server/src/` contain the Supabase-backed workforce web app and API deployed by `vercel.json`. HR staff registration requires an authorized manager; staff need an assigned workstation for location-restricted sign-in.
+- `supabase/install_empty_database.sql` installs the workforce schema without operational records. It was applied to the Nexfeild Supabase project `mpdaomlzhvjytevzucvh` on 25 November 2026. Never run historical seed scripts on a live project.
+- Production deployment: https://nexfeild.vercel.app under the `nexzektechnology/nexfeild` Vercel project. Its Supabase URL and API keys are private Vercel environment settings. Do not put secrets in Git. GitHub auto-deploy requires installing Vercel's GitHub app for this repository.
 
 Run `npm test` for the integrated API tests, `npm run build` for the NexFieldForce interface, and `npm --prefix client run build` for the Vercel interface.
 

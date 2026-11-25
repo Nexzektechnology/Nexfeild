@@ -222,7 +222,7 @@ export default function LoginPage({ onLogin, onNavigatePublic }) {
       {/* Right Login Form */}
       <div className="lg:col-span-5 flex items-center justify-center p-6 sm:p-10">
         <div className="w-full max-w-md space-y-6">
-          <div className="lg:hidden flex items-center gap-3 mb-8"><img src="/favicon.svg" alt="" className="w-10 h-10" /><span className="text-lg font-bold tracking-tight">EdgeWForce<span className="block text-xs text-zinc-400 font-normal mt-1">Your working day, simplified.</span></span></div>
+          <div className="lg:hidden flex items-center gap-3 mb-8"><img src="/favicon.svg" alt="" className="w-10 h-10" /><span className="text-lg font-bold tracking-tight">NexFieldForce<span className="block text-xs text-zinc-400 font-normal mt-1">Your working day, simplified.</span></span></div>
           <div className="space-y-2">
             <h2 className="text-2xl font-black text-white">Welcome to your workspace</h2>
             <p className="text-xs text-zinc-400">
@@ -313,7 +313,7 @@ export default function LoginPage({ onLogin, onNavigatePublic }) {
 
           <div className="pt-3 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-2">
             <span>Corporate Access Only</span>
-            <span className="text-[11px] text-zinc-400 font-semibold">&copy; Nexfeild. edgewforce.com</span>
+            <span className="text-[11px] text-zinc-400 font-semibold">&copy; NexFieldForce</span>
           </div>
         </div>
       </div>
