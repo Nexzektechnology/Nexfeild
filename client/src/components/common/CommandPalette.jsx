@@ -171,7 +171,7 @@ export default function CommandPalette({
             <span>Navigate with <kbd className="font-mono bg-white dark:bg-zinc-800 px-1.5 py-0.5 rounded border border-zinc-200 dark:border-zinc-700">↑</kbd> <kbd className="font-mono bg-white dark:bg-zinc-800 px-1.5 py-0.5 rounded border border-zinc-200 dark:border-zinc-700">↓</kbd></span>
             <span>Select with <kbd className="font-mono bg-white dark:bg-zinc-800 px-1.5 py-0.5 rounded border border-zinc-200 dark:border-zinc-700">↵</kbd></span>
           </div>
-          <span className="font-medium text-orange-600 dark:text-orange-400">EdgeWForce OS</span>
+          <span className="font-medium text-orange-600 dark:text-orange-400">NexFieldForce OS</span>
         </div>
       </div>
     </div>

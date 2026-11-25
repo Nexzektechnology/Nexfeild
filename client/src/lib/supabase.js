@@ -1,5 +1,5 @@
 // ==============================================================================
-// EDGEWFORCE - CLIENT-SIDE SUPABASE AUTH & API CLIENT
+// NEXFIELDFORCE - CLIENT-SIDE SUPABASE AUTH & API CLIENT
 // Configures official Supabase Client with Session Persistence & Auto-Refresh
 // ==============================================================================
 

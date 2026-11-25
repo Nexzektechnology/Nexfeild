@@ -1,5 +1,5 @@
 // ==============================================================================
-// EDGEWFORCE - CLIENT GPS & HAVERSINE GEOFENCE ENGINE
+// NEXFIELDFORCE - CLIENT GPS & HAVERSINE GEOFENCE ENGINE
 // ==============================================================================
 
 const EARTH_RADIUS_METERS = 6371000;

@@ -1,5 +1,5 @@
 // ==============================================================================
-// EDGEWFORCE - NIGERIAN GEOGRAPHICAL DATASET (36 STATES + FCT ABUJA & MAJOR TOWNS)
+// NEXFIELDFORCE - NIGERIAN GEOGRAPHICAL DATASET (36 STATES + FCT ABUJA & MAJOR TOWNS)
 // Complete Production Directory of Nigerian States and Commercial Towns/Cities
 // ==============================================================================
 

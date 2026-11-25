@@ -27,9 +27,6 @@ export async function findUserByIdentifier(identifier) {
   if (isEmail(trimmedInput)) {
     const normalizedEmail = normalizeEmail(trimmedInput);
     user = await db.findOne('users', { email: normalizedEmail });
-    if (!user && (normalizedEmail === 'itadmin@edgewforce.com' || normalizedEmail === 'it-admin@edgewforce.com')) {
-      user = await db.findOne('users', { email: 'it@edgewforce.com' }) || await db.findOne('users', { email: 'admin@edgewforce.com' });
-    }
     if (!user) {
       const employees = await db.find('employees');
       const emp = employees.find(e => 

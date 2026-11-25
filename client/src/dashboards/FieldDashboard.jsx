@@ -477,7 +477,7 @@ export default function FieldDashboard({ user, initialTab = 'manifest', onSelect
                         )}
                         {item.phone && (
                           <a
-                            href={getWhatsAppDeepLink(item.phone, `Hello ${item.contact_person || ''}, this is EdgeWForce Field Rep.`)}
+                            href={getWhatsAppDeepLink(item.phone, `Hello ${item.contact_person || ''}, this is NexFieldForce Field Rep.`)}
                             target="_blank"
                             rel="noreferrer"
                             className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20"
@@ -616,7 +616,7 @@ export default function FieldDashboard({ user, initialTab = 'manifest', onSelect
                         )}
                         {c.phone && (
                           <a
-                            href={getWhatsAppDeepLink(c.phone, `Hello ${c.contact_person || c.name}, this is EdgeWForce Field Rep.`)}
+                            href={getWhatsAppDeepLink(c.phone, `Hello ${c.contact_person || c.name}, this is NexFieldForce Field Rep.`)}
                             target="_blank"
                             rel="noreferrer"
                             className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20"

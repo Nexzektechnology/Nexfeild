@@ -1,5 +1,5 @@
 // ==============================================================================
-// EDGEWFORCE - EMPLOYEE LOCATION ASSIGNMENT MODAL
+// NEXFIELDFORCE - EMPLOYEE LOCATION ASSIGNMENT MODAL
 // Primary, Secondary, and Temporary Location Management with Audit History
 // ==============================================================================
 

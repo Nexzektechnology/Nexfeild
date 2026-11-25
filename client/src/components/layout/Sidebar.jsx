@@ -30,15 +30,10 @@ export default function Sidebar({ user, currentTab, onSelectTab, onLogout, isMob
   const rank = user?.rank?.code;
 
   const isManagement = ['SUPER_ADMIN', 'ADMIN', 'IT_ADMIN', 'CEO', 'CTO', 'HR_MANAGER', 'HR', 'MANAGER', 'SUPERVISOR', 'AGENT_ADMIN'].includes(role) ||
-    ['IT_ADMIN', 'CEO', 'CTO', 'HR', 'MANAGER'].includes(rank) ||
-    user?.email === 'admin@edgewforce.com';
+    ['IT_ADMIN', 'CEO', 'CTO', 'HR', 'MANAGER'].includes(rank);
 
   const isHROrIT = ['SUPER_ADMIN', 'ADMIN', 'IT_ADMIN', 'HR_MANAGER', 'HR', 'CEO', 'CTO'].includes(role) ||
-    ['IT_ADMIN', 'HR', 'CEO', 'CTO'].includes(rank) ||
-    user?.email === 'admin@edgewforce.com' ||
-    user?.email === 'it@edgewforce.com' ||
-    user?.email === 'hr@edgewforce.com' ||
-    user?.email === 'ceo@edgewforce.com';
+    ['IT_ADMIN', 'HR', 'CEO', 'CTO'].includes(rank);
 
   const isAgent = role === 'FIELD_AGENT' || role === 'SALES_AGENT' || role === 'BRAND_AMBASSADOR' || role === 'PROMOTER';
 

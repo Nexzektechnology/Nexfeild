@@ -1,5 +1,5 @@
 // ==============================================================================
-// EDGEWFORCE - FULL OFFLINE DATA CACHE & SYNCHRONIZATION ENGINE
+// NEXFIELDFORCE - FULL OFFLINE DATA CACHE & SYNCHRONIZATION ENGINE
 // IndexedDB Persistence via localForage with Idempotency Protection
 // ==============================================================================
 
@@ -15,14 +15,14 @@ export function offlineOwner() {
 
 // 1. Configure Offline Queue Store
 export const queueStore = localforage.createInstance({
-  name: 'EdgeWForce',
+  name: 'NexFieldForce',
   storeName: 'offline_action_queue',
   description: 'Transactional offline queue for orders, visits, and attendance'
 });
 
 // 2. Configure Offline Data Cache Store (for GET queries)
 export const dataCacheStore = localforage.createInstance({
-  name: 'EdgeWForce',
+  name: 'NexFieldForce',
   storeName: 'api_data_cache',
   description: 'Cached GET responses for full offline operation'
 });

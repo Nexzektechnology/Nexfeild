@@ -1,5 +1,5 @@
 // ==============================================================================
-// EDGEWFORCE - HTTP REST CLIENT WITH OFFLINE CACHING & AUTO-SYNC
+// NEXFIELDFORCE - HTTP REST CLIENT WITH OFFLINE CACHING & AUTO-SYNC
 // ==============================================================================
 
 import { cacheApiResponse, getCachedApiResponse, enqueueOfflineAction, offlineOwner } from './offline.js';

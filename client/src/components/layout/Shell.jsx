@@ -284,7 +284,7 @@ export default function Shell({
           <div className="p-3 rounded-xl surface-card-subtle border border-orange-500/30 flex items-start gap-2.5">
             <Activity size={18} className="text-orange-500 mt-0.5 flex-shrink-0" />
             <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-              EdgeWForce recorded a gap in app interaction. This can include meetings, reading or connection problems. Add context for HR; this flag does not prove you stopped working. Only interaction counts are tracked, never typed text or screenshots.
+              NexFieldForce recorded a gap in app interaction. This can include meetings, reading or connection problems. Add context for HR; this flag does not prove you stopped working. Only interaction counts are tracked, never typed text or screenshots.
             </p>
           </div>
 

@@ -88,7 +88,7 @@ export default function LiveCameraModal({
 
     // Watermark with Experiential Edge Timestamp & Verified Geofence
     const now = new Date();
-    const watermarkText = `EDGEWFORCE VERIFIED AUDIT • ${formatDate(now)} ${formatTime(now)}`;
+    const watermarkText = `NEXFIELDFORCE VERIFIED AUDIT • ${formatDate(now)} ${formatTime(now)}`;
     ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
     ctx.fillRect(0, canvas.height - 36, canvas.width, 36);
     ctx.fillStyle = '#FFFFFF';

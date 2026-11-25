@@ -85,7 +85,7 @@ export default function App() {
     if (!u) return 'dashboard';
     const role = u.role_code;
     const rank = u.rank?.code;
-    if (role === 'SUPER_ADMIN' || role === 'ADMIN' || role === 'IT_ADMIN' || rank === 'IT_ADMIN' || u.email === 'admin@edgewforce.com') {
+    if (role === 'SUPER_ADMIN' || role === 'ADMIN' || role === 'IT_ADMIN' || rank === 'IT_ADMIN') {
       return 'command_center';
     }
     if (role === 'SUPERVISOR') return 'supervisor_dashboard';

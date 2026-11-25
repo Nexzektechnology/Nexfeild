@@ -646,7 +646,7 @@ export default function InventoryDashboard({ user }) {
                 <div>
                   <h3 className="font-bold text-zinc-900 dark:text-zinc-100 text-sm">{locName}</h3>
                   <p className="text-xs text-zinc-400 mt-0.5">
-                    {locName.includes('Ogba') ? 'Ogba Facility, Lagos' : (locName.includes('Maryland') ? '15 Atiba Osborne, Mende, Maryland, Lagos' : (locName.includes('Diamond') ? 'Diamond Estate, Isheri Igando, Lagos' : 'Central Warehouse Facility, Lagos'))}
+                    Location details managed by your organization
                   </p>
                 </div>
                 <div className="pt-2 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between text-xs">

@@ -74,18 +74,18 @@ export default function ITAdminDashboard({ user, onSelectTab }) {
     phone: '',
     department: 'Commercial Sales',
     department_id: 1,
-    position: 'Operations Officer',
-    state: 'Lagos',
-    city: 'Ikeja',
-    territory: 'Lagos - Ikeja',
+    position: '',
+    state: '',
+    city: '',
+    territory: '',
     rank_code: 'STAFF',
     assigned_location_id: '',
-    base_salary: '350000',
-    housing_allowance: '150000',
-    transport_allowance: '75000',
-    other_allowance: '25000',
-    date_of_birth: '1995-05-15',
-    address: '15 Atiba Osborne, Mende, Maryland, Lagos'
+    base_salary: '',
+    housing_allowance: '',
+    transport_allowance: '',
+    other_allowance: '',
+    date_of_birth: '',
+    address: ''
   });
 
   // Password Reset Modal
@@ -122,12 +122,12 @@ export default function ITAdminDashboard({ user, onSelectTab }) {
 
   // Receipt & Branding Form
   const [receiptForm, setReceiptForm] = useState({
-    receipt_company_name: 'EXPERIENTIAL EDGE',
-    receipt_tagline: 'Integrated Marketing & Commercial Distribution Solutions',
-    receipt_title: 'EDGEWFORCE SALES RECEIPT',
-    receipt_address: '15 Atiba Osborne, Mende, Maryland, Lagos',
-    receipt_phone: '+2348031234567',
-    receipt_footer_note: 'Thank you for your business. Verified by EdgeWForce Operating System.'
+    receipt_company_name: 'NexFieldForce',
+    receipt_tagline: 'Workforce Operations',
+    receipt_title: 'NEXFIELDFORCE SALES RECEIPT',
+    receipt_address: '',
+    receipt_phone: '',
+    receipt_footer_note: 'Thank you for your business. Verified by NexFieldForce Operating System.'
   });
   const [savingReceipt, setSavingReceipt] = useState(false);
 
@@ -158,12 +158,12 @@ export default function ITAdminDashboard({ user, onSelectTab }) {
       if (sData) {
         setCompanySettings(sData);
         setReceiptForm({
-          receipt_company_name: sData.receipt_company_name || 'EXPERIENTIAL EDGE',
-          receipt_tagline: sData.receipt_tagline || 'Integrated Marketing & Commercial Distribution Solutions',
-          receipt_title: sData.receipt_title || 'EDGEWFORCE SALES RECEIPT',
-          receipt_address: sData.receipt_address || '15 Atiba Osborne, Mende, Maryland, Lagos',
-          receipt_phone: sData.receipt_phone || '+2348031234567',
-          receipt_footer_note: sData.receipt_footer_note || 'Thank you for your business. Verified by EdgeWForce Operating System.'
+          receipt_company_name: sData.receipt_company_name || 'NexFieldForce',
+          receipt_tagline: sData.receipt_tagline || 'Workforce Operations',
+          receipt_title: sData.receipt_title || 'NEXFIELDFORCE SALES RECEIPT',
+          receipt_address: sData.receipt_address || '',
+          receipt_phone: sData.receipt_phone || '',
+          receipt_footer_note: sData.receipt_footer_note || 'Thank you for your business. Verified by NexFieldForce Operating System.'
         });
       }
     } catch {
@@ -205,17 +205,17 @@ export default function ITAdminDashboard({ user, onSelectTab }) {
         department: 'Commercial Sales',
         department_id: 1,
         position: 'Operations Officer',
-        state: 'Lagos',
-        city: 'Ikeja',
-        territory: 'Lagos - Ikeja',
+        state: '',
+        city: '',
+        territory: '',
         rank_code: 'STAFF',
         assigned_location_id: '',
-        base_salary: '350000',
-        housing_allowance: '150000',
-        transport_allowance: '75000',
-        other_allowance: '25000',
-        date_of_birth: '1995-05-15',
-        address: '15 Atiba Osborne, Mende, Maryland, Lagos'
+        base_salary: '',
+        housing_allowance: '',
+        transport_allowance: '',
+        other_allowance: '',
+        date_of_birth: '',
+        address: ''
       });
       loadData();
     } catch (err) {
@@ -767,7 +767,7 @@ export default function ITAdminDashboard({ user, onSelectTab }) {
                 <input
                   type="text"
                   required
-                  placeholder="e.g. EDGEWFORCE SALES RECEIPT or OFFICIAL INVOICE"
+                  placeholder="e.g. NEXFIELDFORCE SALES RECEIPT or OFFICIAL INVOICE"
                   value={receiptForm.receipt_title}
                   onChange={(e) => setReceiptForm({ ...receiptForm, receipt_title: e.target.value })}
                   className="form-input font-bold text-orange-600 dark:text-orange-400"
@@ -781,7 +781,7 @@ export default function ITAdminDashboard({ user, onSelectTab }) {
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. 15 Atiba Osborne, Mende, Maryland, Lagos"
+                    placeholder="Enter your organization's address"
                     value={receiptForm.receipt_address}
                     onChange={(e) => setReceiptForm({ ...receiptForm, receipt_address: e.target.value })}
                     className="form-input"
@@ -852,7 +852,7 @@ export default function ITAdminDashboard({ user, onSelectTab }) {
                   </div>
                 )}
                 <div className="text-[11px] font-bold text-orange-600 mt-1.5 font-sans">
-                  {receiptForm.receipt_title || 'EDGEWFORCE SALES RECEIPT'}
+                  {receiptForm.receipt_title || 'NEXFIELDFORCE SALES RECEIPT'}
                 </div>
                 <div className="text-[10px] text-zinc-500 mt-1">
                   Order #: ORD-202608-SAMPLE
@@ -906,7 +906,7 @@ export default function ITAdminDashboard({ user, onSelectTab }) {
               </div>
 
               <div className="pt-3 text-[9px] text-center text-zinc-500 font-sans">
-                {receiptForm.receipt_footer_note || 'Thank you for your business. Verified by EdgeWForce Operating System.'}
+                {receiptForm.receipt_footer_note || 'Thank you for your business. Verified by NexFieldForce Operating System.'}
               </div>
             </div>
           </div>
@@ -952,7 +952,7 @@ export default function ITAdminDashboard({ user, onSelectTab }) {
               </div>
               <div className="flex justify-between py-2">
                 <span className="text-zinc-500">Headquarters Address:</span>
-                <b className="text-zinc-900 dark:text-zinc-100">15 Atiba Osborne, Mende, Maryland, Lagos</b>
+                <b className="text-zinc-900 dark:text-zinc-100">Set in company settings</b>
               </div>
             </div>
           </div>

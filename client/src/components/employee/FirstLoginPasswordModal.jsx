@@ -68,7 +68,7 @@ export default function FirstLoginPasswordModal({
             Secure Your Account
           </h2>
           <p className="text-xs text-zinc-500 dark:text-zinc-400">
-            Welcome to EdgeWForce, <span className="font-bold text-zinc-800 dark:text-zinc-200">{user.full_name || user.email}</span>! As part of enterprise security compliance, please set your permanent password to proceed.
+            Welcome to NexFieldForce, <span className="font-bold text-zinc-800 dark:text-zinc-200">{user.full_name || user.email}</span>! As part of enterprise security compliance, please set your permanent password to proceed.
           </p>
         </div>
 

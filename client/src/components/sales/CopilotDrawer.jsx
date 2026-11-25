@@ -6,7 +6,7 @@ export default function CopilotDrawer({ isOpen, onClose, selectedCustomer, curre
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: 'Hello Adebanjo! I am your **EdgeWForce Sales AI Copilot**. I can help you handle price objections, calculate profitable bundles, recommend cross-sells, or script professional debt recovery conversations. How can I assist you today?'
+      content: 'Hello Adebanjo! I am your **NexFieldForce Sales AI Copilot**. I can help you handle price objections, calculate profitable bundles, recommend cross-sells, or script professional debt recovery conversations. How can I assist you today?'
     }
   ]);
   const [input, setInput] = useState('');

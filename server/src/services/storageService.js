@@ -16,7 +16,9 @@ if (!process.env.VERCEL) {
   try { fs.mkdirSync(localUploadDir, { recursive: true }); } catch { /* ignore */ }
 }
 
-const DEFAULT_BUCKET = process.env.SUPABASE_STORAGE_BUCKET || 'edgewforce-media';
+const DEFAULT_BUCKET = process.env.SUPABASE_STORAGE_BUCKET || 'nexfeild-media';
+const PRIVATE_BUCKET = process.env.SUPABASE_PRIVATE_STORAGE_BUCKET || 'nexfeild-private';
+const PRIVATE_FOLDERS = new Set(['payslips', 'settlements', 'signatures']);
 
 export const storageService = {
   /**
@@ -41,6 +43,7 @@ export const storageService = {
     const uniqueSuffix = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
     const uniqueName = `${folder}-${uniqueSuffix}${ext}`;
     const storagePath = `${folder}/${uniqueSuffix}${ext}`;
+    const bucket = PRIVATE_FOLDERS.has(folder) ? PRIVATE_BUCKET : DEFAULT_BUCKET;
     const contentType = file.mimetype || 'image/jpeg';
 
     // 1. Upload to Supabase Storage if configured
@@ -49,21 +52,25 @@ export const storageService = {
         const fileData = file.buffer || (file.path ? fs.readFileSync(file.path) : null);
         if (fileData) {
           const { data, error } = await storageClient.storage
-            .from(DEFAULT_BUCKET)
+            .from(bucket)
             .upload(storagePath, fileData, {
               contentType,
-              upsert: true
+              upsert: false
             });
 
           if (!error && data) {
-            const { data: publicUrlData } = storageClient.storage
-              .from(DEFAULT_BUCKET)
-              .getPublicUrl(storagePath);
-
-            if (publicUrlData?.publicUrl) {
-              logger.info(`Uploaded file to Supabase Storage: ${storagePath}`);
-              return publicUrlData.publicUrl;
+            if (bucket === PRIVATE_BUCKET) {
+              const { data: signed, error: signError } = await storageClient.storage
+                .from(bucket)
+                .createSignedUrl(storagePath, 60 * 60 * 24 * 365 * 5);
+              if (signError || !signed?.signedUrl) throw new Error('Private file link could not be created.');
+              logger.info(`Uploaded private file to Supabase Storage: ${storagePath}`);
+              return signed.signedUrl;
             }
+            const { data: publicUrlData } = storageClient.storage.from(bucket).getPublicUrl(storagePath);
+            if (!publicUrlData?.publicUrl) throw new Error('File link could not be created.');
+            logger.info(`Uploaded file to Supabase Storage: ${storagePath}`);
+            return publicUrlData.publicUrl;
           } else if (error) {
             if (requireCloud) throw new Error('Cloud file upload failed. Please retry.');
             logger.warn(`Supabase Storage upload error: ${error.message}. Falling back.`);
@@ -108,12 +115,12 @@ export const storageService = {
       return db.deleteFile(fileUrl.slice('/uploads/'.length));
     }
     const storageClient = supabaseAdmin || supabase;
-    if (!fileUrl || !storageClient || !fileUrl.includes(DEFAULT_BUCKET)) return false;
+    if (!fileUrl || !storageClient) return false;
     try {
-      const parts = fileUrl.split(`${DEFAULT_BUCKET}/`);
-      if (parts.length > 1) {
-        const filePath = parts[1];
-        const { error } = await storageClient.storage.from(DEFAULT_BUCKET).remove([filePath]);
+      const bucket = [PRIVATE_BUCKET, DEFAULT_BUCKET].find(name => fileUrl.includes(`${name}/`));
+      if (bucket) {
+        const filePath = decodeURIComponent(fileUrl.split(`${bucket}/`)[1].split('?')[0]);
+        const { error } = await storageClient.storage.from(bucket).remove([filePath]);
         return !error;
       }
     } catch (err) {

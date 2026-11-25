@@ -48,7 +48,7 @@ export default function SOSModal({ isOpen, onClose, onDispatched }) {
               BEACON BROADCAST ACTIVE
             </h4>
             <p className="text-xs text-zinc-600 dark:text-zinc-300">
-              Your emergency and GPS location are recorded in EdgeWForce for supervisors, HR and executive management.
+              Your emergency and GPS location are recorded in NexFieldForce for supervisors, HR and executive management.
             </p>
             <button onClick={onClose} className="btn-secondary w-full text-xs">
               Dismiss Modal (Beacon Remains Active)
@@ -62,7 +62,7 @@ export default function SOSModal({ isOpen, onClose, onDispatched }) {
                 <span>Confirm Emergency Dispatch</span>
               </div>
               <p>
-                Triggering this beacon will immediately notify operations managers, field supervisors and HR in EdgeWForce with your live GPS location.
+                Triggering this beacon will immediately notify operations managers, field supervisors and HR in NexFieldForce with your live GPS location.
               </p>
             </div>
 

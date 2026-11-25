@@ -1046,7 +1046,7 @@ export default function HRDashboard({ user, initialTab = 'overview', onSelectTab
                       setBroadcastForm({
                         employee_id: emp.id,
                         employee_name: emp.full_name,
-                        custom_wish: `Happy Birthday to ${emp.full_name} (${emp.position}, ${emp.department})! Wishing you health, happiness, and incredible accomplishments with EdgeWForce! 🎉🎂`
+                        custom_wish: `Happy Birthday to ${emp.full_name} (${emp.position}, ${emp.department})! Wishing you health, happiness, and incredible accomplishments with NexFieldForce! 🎉🎂`
                       });
                       setBroadcastModalOpen(true);
                     }}

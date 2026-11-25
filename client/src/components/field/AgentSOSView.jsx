@@ -1,5 +1,5 @@
 // ==============================================================================
-// EDGEWFORCE - STRICT AGENT SOS & EMERGENCY VIEW
+// NEXFIELDFORCE - STRICT AGENT SOS & EMERGENCY VIEW
 // ==============================================================================
 
 import React, { useState, useEffect, useRef } from 'react';

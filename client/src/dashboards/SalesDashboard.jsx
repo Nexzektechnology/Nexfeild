@@ -588,7 +588,7 @@ export default function SalesDashboard({ user }) {
                     </div>
                     {v.customer?.phone && (
                       <a
-                        href={getWhatsAppDeepLink(v.customer.phone, `Good day, this is Adebanjo from Experiential Edge. I will be visiting your outlet today.`)}
+                        href={getWhatsAppDeepLink(v.customer.phone, `Good day, this is your NexFieldForce field representative. I will be visiting your outlet today.`)}
                         target="_blank"
                         rel="noreferrer"
                         className="p-1.5 text-emerald-500 hover:bg-emerald-500/10 rounded-lg"
@@ -1089,7 +1089,7 @@ export default function SalesDashboard({ user }) {
                           )}
                           {cust.phone && (
                             <a
-                              href={getWhatsAppDeepLink(cust.phone, 'Good day from Experiential Edge.')}
+                              href={getWhatsAppDeepLink(cust.phone, 'Good day from NexFieldForce.')}
                               target="_blank"
                               rel="noreferrer"
                               className="p-1 text-emerald-500 hover:bg-emerald-500/10 rounded"

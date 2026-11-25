@@ -21,8 +21,8 @@ export function PublicNavbar({ onNavigate, currentPage }) {
       <div className="flex items-center gap-3 cursor-pointer" onClick={() => onNavigate('landing')}>
         <img src="/favicon.svg" alt="Logo" className="w-8 h-8" />
         <div>
-          <span className="font-black text-sm text-white tracking-tight">EDGE<span className="text-orange-500">W</span>FORCE</span>
-          <span className="hidden sm:block text-[9px] text-zinc-400 font-bold uppercase tracking-wider">Experiential Edge</span>
+          <span className="font-black text-sm text-white tracking-tight">NEX<span className="text-orange-500">FIELD</span>FORCE</span>
+          <span className="hidden sm:block text-[9px] text-zinc-400 font-bold uppercase tracking-wider">Workforce intelligence</span>
         </div>
       </div>
 
@@ -50,9 +50,9 @@ export function PublicFooter({ onNavigate }) {
     <footer className="bg-zinc-950 border-t border-zinc-900 text-zinc-400 text-xs py-12 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
         <div className="space-y-2 col-span-2 md:col-span-1">
-          <div className="font-black text-white text-base tracking-tight">EDGE<span className="text-orange-500">W</span>FORCE</div>
+          <div className="font-black text-white text-base tracking-tight">NEX<span className="text-orange-500">FIELD</span>FORCE</div>
           <p className="text-[11px] text-zinc-500 leading-relaxed">
-            Enterprise Workforce & Commercial Sales Operating System. Powered by Experiential Edge Limited.
+            Enterprise workforce, field operations and commercial sales platform.
           </p>
         </div>
         <div className="space-y-1.5">
@@ -63,14 +63,13 @@ export function PublicFooter({ onNavigate }) {
         </div>
         <div className="space-y-1.5">
           <div className="font-bold text-zinc-200 uppercase text-[10px] tracking-wider mb-2">Company</div>
-          <div><button onClick={() => onNavigate('about')} className="hover:text-white">About Experiential Edge</button></div>
+          <div><button onClick={() => onNavigate('about')} className="hover:text-white">About NexFieldForce</button></div>
           <div><button onClick={() => onNavigate('privacy')} className="hover:text-white">Privacy & Ethics</button></div>
           <div><button onClick={() => onNavigate('terms')} className="hover:text-white">Terms of Service</button></div>
         </div>
         <div className="space-y-1.5">
-          <div className="font-bold text-zinc-200 uppercase text-[10px] tracking-wider mb-2">Headquarters</div>
-          <div className="text-[11px] text-zinc-400">15 Atiba Osborne, Mende, Maryland, Lagos, Nigeria</div>
-          <div className="text-[11px] text-orange-400 font-mono mt-1">+234 (0) 1 234 5678</div>
+          <div className="font-bold text-zinc-200 uppercase text-[10px] tracking-wider mb-2">Contact</div>
+          <div className="text-[11px] text-zinc-400">Ask your organization administrator for support.</div>
         </div>
       </div>
       <div className="max-w-6xl mx-auto pt-6 border-t border-zinc-900 flex flex-col sm:flex-row justify-between text-zinc-500 text-[11px]">
@@ -89,7 +88,7 @@ export function LandingPage({ onNavigate }) {
       <section className="py-20 px-6 max-w-5xl mx-auto text-center space-y-6">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-bold shadow-xs">
           <Sparkles size={14} />
-          <span>Experiential Edge • Workforce Intelligence Platform</span>
+          <span>NexFieldForce • Workforce Intelligence Platform</span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
@@ -172,7 +171,7 @@ export function FeaturesPage({ onNavigate }) {
             <h3 className="text-base font-bold text-amber-400">Field Operations & Geofencing</h3>
             <ul className="space-y-2 text-xs text-zinc-400">
               <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-amber-500" /> Mobile-first route execution manifest</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-amber-500" /> Strict 150-meter Haversine GPS geofence verification</li>
+              <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-amber-500" /> 300-meter GPS geofence verification</li>
               <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-amber-500" /> Store audit checklist, shelf share slider & signature canvas</li>
               <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-amber-500" /> Emergency SOS panic beacon with GPS broadcast</li>
             </ul>
@@ -189,12 +188,12 @@ export function AboutPage({ onNavigate }) {
     <div className="min-h-screen bg-zinc-950 text-white sunburst-bg">
       <PublicNavbar onNavigate={onNavigate} currentPage="about" />
       <div className="py-16 px-6 max-w-4xl mx-auto space-y-6">
-        <h1 className="text-3xl font-black">About Experiential Edge</h1>
+        <h1 className="text-3xl font-black">About NexFieldForce</h1>
         <p className="text-sm text-zinc-400 leading-relaxed">
-          Experiential Edge / Integrated Marketing Solutions is a premier commercial execution, retail distribution, and field marketing agency operating across Nigeria.
+          NexFieldForce brings workforce scheduling, attendance, sales, field operations, and project collaboration together in one web app.
         </p>
         <p className="text-sm text-zinc-400 leading-relaxed">
-          EdgeWForce was conceived and developed as our in-house enterprise workforce operating system to solve the challenges of distributed sales accountability, verifiable store audits, transparent commission structures, and fair workforce productivity.
+          The platform supports distributed sales accountability, verifiable store audits, transparent commission structures, and fair workforce productivity.
         </p>
       </div>
       <PublicFooter onNavigate={onNavigate} />
@@ -209,7 +208,7 @@ export function PrivacyPage({ onNavigate }) {
       <div className="py-16 px-6 max-w-4xl mx-auto space-y-6 text-xs text-zinc-400 leading-relaxed">
         <h1 className="text-3xl font-black text-white">Privacy & Ethics Policy</h1>
         <p>
-          At Experiential Edge, we believe in transparent, respectful, and non-invasive employee telemetry.
+          NexFieldForce is designed for transparent, respectful, and non-invasive employee telemetry.
         </p>
         <h3 className="text-base font-bold text-white">1. Inactivity Tracking Philosophy</h3>
         <p>
@@ -217,7 +216,7 @@ export function PrivacyPage({ onNavigate }) {
         </p>
         <h3 className="text-base font-bold text-white">2. GPS Telemetry Scope</h3>
         <p>
-          GPS coordinates are captured exclusively during active work shifts and visit check-ins to verify proximity within the 150-meter perimeter of retail outlets.
+          GPS coordinates are captured during location-restricted sign-in, active work shifts, and visit check-ins to verify configured workplace and market boundaries.
         </p>
       </div>
       <PublicFooter onNavigate={onNavigate} />
@@ -232,7 +231,7 @@ export function TermsPage({ onNavigate }) {
       <div className="py-16 px-6 max-w-4xl mx-auto space-y-6 text-xs text-zinc-400 leading-relaxed">
         <h1 className="text-3xl font-black text-white">Terms of Service</h1>
         <p>
-          Use of the EdgeWForce platform is governed by corporate compliance agreements between Experiential Edge Nigeria Limited and authorized staff members.
+          Use of NexFieldForce is subject to your organization's policies and the access granted to your account. Contact your administrator for the applicable terms.
         </p>
       </div>
       <PublicFooter onNavigate={onNavigate} />

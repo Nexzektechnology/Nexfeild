@@ -231,7 +231,7 @@ export default function SenriVisitWorkflow({ user, onVisitCompleted }) {
       ctx.font = 'bold 12px sans-serif';
       const timeStr = new Date().toLocaleString();
       const gpsStr = gpsData ? `Lat: ${gpsData.latitude.toFixed(4)}, Lng: ${gpsData.longitude.toFixed(4)}` : 'GPS Verified';
-      ctx.fillText(`EdgeWForce Audit • ${timeStr} • ${gpsStr}`, 12, canvas.height - 12);
+      ctx.fillText(`NexFieldForce Audit • ${timeStr} • ${gpsStr}`, 12, canvas.height - 12);
 
       const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
       setShelfPhotoPreview(dataUrl);

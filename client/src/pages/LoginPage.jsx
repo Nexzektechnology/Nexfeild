@@ -178,7 +178,7 @@ export default function LoginPage({ onLogin, onNavigatePublic }) {
               EDGE<span className="text-orange-500">W</span>FORCE
             </div>
             <div className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
-              Powered by Experiential Edge
+              Powered by NexFieldForce
             </div>
           </div>
         </div>

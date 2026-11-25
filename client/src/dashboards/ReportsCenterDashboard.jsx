@@ -45,7 +45,7 @@ export default function ReportsCenterDashboard() {
     try {
       const blob = await api.get(`${query()}&format=xlsx&selected=${encodeURIComponent(reportType)}`, { responseType: 'blob' });
       const url = URL.createObjectURL(blob), link = document.createElement('a');
-      link.href = url; link.download = `EdgeWForce-${reportType}-${range.start}-${range.end}.xlsx`; link.click();
+      link.href = url; link.download = `NexFieldForce-${reportType}-${range.start}-${range.end}.xlsx`; link.click();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     } catch (failure) { setError(failure.message); }
     finally { setExporting(false); }

@@ -1,5 +1,5 @@
 // ==============================================================================
-// EDGEWFORCE - LOCALIZATION & FORMATTING UTILITIES (₦ NGN, +234, Dates)
+// NEXFIELDFORCE - LOCALIZATION & FORMATTING UTILITIES (₦ NGN, +234, Dates)
 // ==============================================================================
 
 /**

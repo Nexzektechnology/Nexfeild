@@ -21,12 +21,12 @@ export default function ReceiptModal({ order, isOpen, onClose, customSettings })
     window.print();
   };
 
-  const companyName = customSettings?.receipt_company_name || settings?.receipt_company_name || 'EXPERIENTIAL EDGE';
-  const tagline = customSettings?.receipt_tagline || settings?.receipt_tagline || 'Integrated Marketing & Commercial Distribution Solutions';
-  const receiptTitle = customSettings?.receipt_title || settings?.receipt_title || 'EDGEWFORCE SALES RECEIPT';
-  const address = customSettings?.receipt_address || settings?.receipt_address || '15 Atiba Osborne, Mende, Maryland, Lagos';
-  const phone = customSettings?.receipt_phone || settings?.receipt_phone || '+2348031234567';
-  const footerNote = customSettings?.receipt_footer_note || settings?.receipt_footer_note || 'Thank you for your business. Verified by EdgeWForce Operating System.';
+  const companyName = customSettings?.receipt_company_name || settings?.receipt_company_name || 'NexFieldForce';
+  const tagline = customSettings?.receipt_tagline || settings?.receipt_tagline || 'Workforce Operations';
+  const receiptTitle = customSettings?.receipt_title || settings?.receipt_title || 'NEXFIELDFORCE SALES RECEIPT';
+  const address = customSettings?.receipt_address || settings?.receipt_address || '';
+  const phone = customSettings?.receipt_phone || settings?.receipt_phone || '';
+  const footerNote = customSettings?.receipt_footer_note || settings?.receipt_footer_note || 'Thank you for your business. Verified by NexFieldForce Operating System.';
 
   return (
     <Modal title="Commercial Sales Receipt" isOpen={isOpen} onClose={onClose} maxWidth="max-w-lg">
