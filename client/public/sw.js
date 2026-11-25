@@ -1,9 +1,9 @@
 // ==============================================================================
-// EDGEWFORCE - PROGRESSIVE WEB APP SERVICE WORKER
+// NEXFIELDFORCE - PROGRESSIVE WEB APP SERVICE WORKER
 // Enables instant offline loading and static asset caching
 // ==============================================================================
 
-const CACHE_NAME = 'edgewforce-cache-v2';
+const CACHE_NAME = 'nexfeild-cache-v3';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -27,7 +27,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
       return Promise.all(
-        keys.filter((key) => key.startsWith('edgewforce-cache-') && key !== CACHE_NAME).map((key) => caches.delete(key))
+        keys.filter((key) => (key.startsWith('edgewforce-cache-') || key.startsWith('nexfeild-cache-')) && key !== CACHE_NAME).map((key) => caches.delete(key))
       );
     }).then(() => self.clients.claim())
   );

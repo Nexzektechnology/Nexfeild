@@ -12,7 +12,7 @@
     <line x1="35.2" y1="12.8" x2="38.2" y2="9.8" />
   </g>
   <!-- Edge 'E' Monogram in Radiant Orange -->
-  <path d="M16 14 H32 V19 H22 V22 H30 V27 H22 V30 H32 V35 H16 Z" fill="url(#orangeGrad)" />
+  <path d="M16 35 V14 H21 L30 26 V14 H35 V35 H30 L21 23 V35 Z" fill="url(#orangeGrad)" />
   <defs>
     <linearGradient id="orangeGrad" x1="16" y1="14" x2="32" y2="35" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FFB300" />

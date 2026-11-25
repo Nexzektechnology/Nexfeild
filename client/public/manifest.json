@@ -1,7 +1,7 @@
 {
-  "name": "EdgeWForce Operating System",
-  "short_name": "EdgeWForce",
-  "description": "Enterprise Commercial Sales, Field Operations & Workforce Operating System for Experiential Edge",
+  "name": "NexFieldForce Operating System",
+  "short_name": "NexFieldForce",
+  "description": "Workforce, field operations, commercial sales, and project collaboration",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0E0E11",
