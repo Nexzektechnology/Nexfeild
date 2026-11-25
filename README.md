@@ -9,6 +9,7 @@ This repository combines the NexFieldForce application with the current EdgeWFor
 - `supabase/install_empty_database.sql` installs the workforce schema without operational records. It was applied to the Nexfeild Supabase project `mpdaomlzhvjytevzucvh` on 25 November 2026. Never run historical seed scripts on a live project.
 - Production deployment: https://nexfeild.vercel.app under the `nexzektechnology/nexfeild` Vercel project. Its Supabase URL and API keys are private Vercel environment settings. Do not put secrets in Git. GitHub auto-deploy requires installing Vercel's GitHub app for this repository.
 - Media uploads use `nexfeild-media` for field and sales images and `nexfeild-private` for payslips, settlement slips, and signatures. Private uploads return time-limited signed links. Both buckets are provisioned in the Nexfeild Supabase project.
+- `supabase/migrations/019_cloud_operational_tables.sql` adds the SOS and operational tables needed by the workforce dashboards. It is included in the clean installer and was applied to the live project after the initial installation.
 
 Run `npm test` for the integrated API tests, `npm run build` for the NexFieldForce interface, and `npm --prefix client run build` for the Vercel interface.
 
