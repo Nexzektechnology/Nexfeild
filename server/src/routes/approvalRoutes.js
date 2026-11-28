@@ -1,0 +1,10 @@
+import express from 'express';
+import { requireAuth } from '../middleware/auth.js';
+import { approvalService as service } from '../services/approvalService.js';
+const router = express.Router(); router.use(requireAuth);
+const handle = fn => async (req,res,next) => { try { res.json({ success:true, data: await fn(req) }); } catch(e) { next(e); } };
+router.get('/', handle(req => service.list(req.user, req.query)));
+router.post('/', handle(req => service.create(req.user, req.body)));
+router.post('/:id/review', handle(req => service.review(req.user, req.params.id, req.body)));
+router.post('/:id/finance', handle(req => service.finance(req.user, req.params.id, req.body)));
+export default router;

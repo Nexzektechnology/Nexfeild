@@ -44,6 +44,7 @@ import ActivityReviewPanel from '../components/hr/ActivityReviewPanel';
 import TaskAssignModal from '../components/hr/TaskAssignModal';
 import StateCitySelect from '../components/common/StateCitySelect';
 import LocationAssignmentDashboard from '../components/hr/LocationAssignmentDashboard';
+import ApprovalChannel from '../components/approvals/ApprovalChannel';
 import StaffProfileDrawer from '../components/hr/StaffProfileDrawer';
 import StaffEditModal from '../components/hr/StaffEditModal';
 import StaffImportModal from '../components/hr/StaffImportModal';
@@ -488,6 +489,9 @@ export default function HRDashboard({ user, initialTab = 'overview', onSelectTab
       </div>
 
       {/* TAB 1: OVERVIEW */}
+      {tab === 'overview' && (
+        <ApprovalChannel />
+      )}
       {tab === 'overview' && (
         <div className="space-y-6">
           <ExecutiveActivityBrief onOpenNexus={onSelectTab?()=>onSelectTab('nexus'):undefined} />

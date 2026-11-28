@@ -37,6 +37,7 @@ import workplaceAccessRoutes from './routes/workplaceAccessRoutes.js';
 import executiveReportRoutes from './routes/executiveReportRoutes.js';
 import nexusRoutes from './routes/nexusRoutes.js';
 import hrDailyReportRoutes from './routes/hrDailyReportRoutes.js';
+import approvalRoutes from './routes/approvalRoutes.js';
 import { hrDailyReportService } from './services/hrDailyReportService.js';
 import { timingSafeEqual } from 'node:crypto';
 import { requireAuth } from './middleware/auth.js';
@@ -177,6 +178,7 @@ app.use('/api/activity', activityRoutes);
 app.use('/api/workplace-access', workplaceAccessRoutes);
 app.use('/api/executive-reports', executiveReportRoutes);
 app.use('/api/hr-reports', hrDailyReportRoutes);
+app.use('/api/approvals', approvalRoutes);
 app.get('/api/cron/hr-daily-report', async (req,res,next)=>{
   res.set('Cache-Control','no-store');
   const expected=process.env.CRON_SECRET,provided=req.get('authorization')||'';

@@ -1,4 +1,4 @@
-import { upgradeMysqlStaffNumbering, upgradeMysqlSchedules, upgradeMysqlOperationalIndexes } from './mysqlUpgrades.js';
+import { upgradeMysqlStaffNumbering, upgradeMysqlSchedules, upgradeMysqlOperationalIndexes, upgradeMysqlApprovals } from './mysqlUpgrades.js';
 import {AsyncLocalStorage} from 'node:async_hooks';
 import {createHash} from 'node:crypto';
 import mysql from 'mysql2/promise';
@@ -31,6 +31,7 @@ export function createMysqlDatabase(config,{pool=mysql.createPool(config)}={}){
       if(manifest[0]?.state!=='verified'||manifest[0]?.schema_version!==MYSQL_SCHEMA_VERSION)throw new Error('MySQL data copy has not been verified for this release.');
       await upgradeMysqlSchedules(pool, config.database);
       await upgradeMysqlOperationalIndexes(pool, config.database);
+      await upgradeMysqlApprovals(pool);
       return true;
     },
     async find(table,filter={},options={}){

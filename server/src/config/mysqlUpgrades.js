@@ -1,6 +1,12 @@
 import { operationalIndexes } from './operationalIndexes.js';
 import { columnDefinition, sqlIdentifier } from './mysqlSchema.js';
 
+export async function upgradeMysqlApprovals(pool) {
+ const connection=await pool.getConnection();
+ try { await connection.query("CREATE TABLE IF NOT EXISTS approval_requests (id INT AUTO_INCREMENT PRIMARY KEY, company_id INT NOT NULL DEFAULT 1, requested_by INT NOT NULL, title VARCHAR(255) NOT NULL, description TEXT NOT NULL, category VARCHAR(80) NOT NULL DEFAULT 'General', amount DECIMAL(14,2) NULL, status ENUM('pending_md','pending_finance','declined','completed') NOT NULL DEFAULT 'pending_md', recipient_emails JSON NOT NULL, metadata JSON NOT NULL, md_decision VARCHAR(20) NULL, md_reason TEXT NULL, md_reviewed_by INT NULL, md_reviewed_at DATETIME(6) NULL, finance_user_id INT NULL, finance_note TEXT NULL, attachment_url TEXT NULL, finance_completed_at DATETIME(6) NULL, created_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), updated_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), INDEX approval_company_status(company_id,status,created_at), INDEX approval_requester(company_id,requested_by,created_at))"); }
+ finally { connection.release(); }
+}
+
 export async function upgradeMysqlStaffNumbering(pool,database){
  const connection=await pool.getConnection(),lock=`edgewforce:numbering-upgrade:${database}`.slice(0,64);let locked=false;
  try{

@@ -32,6 +32,7 @@ import DailyScheduleView from '../components/schedule/DailyScheduleView';
 import { formatMoney, formatDate, formatTime } from '../lib/formatters';
 import { getCurrentGPSLocation } from '../lib/geo';
 import { api } from '../lib/api';
+import ApprovalChannel from '../components/approvals/ApprovalChannel';
 
 export default function EmployeeDashboard({ user, initialTab = 'dashboard' }) {
   const [tab, setTab] = useState(initialTab || 'dashboard');
@@ -202,6 +203,9 @@ export default function EmployeeDashboard({ user, initialTab = 'dashboard' }) {
       </div>
 
       {/* TAB 1: DASHBOARD WORKSPACE */}
+      {(tab === 'dashboard' || tab === 'home') && (
+        <ApprovalChannel />
+      )}
       {(tab === 'dashboard' || tab === 'home') && (
         <div className="space-y-6">
           <DailyReminderPrompt
